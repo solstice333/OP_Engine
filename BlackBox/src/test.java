@@ -5,7 +5,7 @@ public class test {
    public static void main(String[] args) {
       ArrayList<Activity> a1 = new ArrayList<Activity>();
       ArrayList<Activity> temp = new ArrayList<Activity>();
-      int actTime = 14;
+      int actTime = 15;
       int actWeather = 75;
 
       for (int t = 40; t <= 85; t++) {
