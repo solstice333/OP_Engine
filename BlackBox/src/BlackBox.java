@@ -21,10 +21,27 @@ public class BlackBox {
 			u.update();
 			actWeather = u.getActualWeather();
 			actTime = u.getActualTime();
+			
+			String actTimeStandard = "";
+         if (actTime > 12) {
+            int actTimeStd = actTime % 12;
+            actTimeStandard = actTimeStd + " PM";
+         }
+         
+         else if (actTime == 12) {
+            actTimeStandard = actTime + " PM";
+         }
+         
+         else if (actTime == 0)
+            actTimeStandard = 12 + " AM";
+         
+         else
+            actTimeStandard = actTime + " AM";
+         
 			actRain = u.getActualRain();
 
 			System.out.println("actWeather " + actWeather);
-			System.out.println("actTime " + actTime);
+			System.out.println("actTime " + actTimeStandard);
 			System.out.println("actRain " + actRain);
 
 			// create random activities:
@@ -86,6 +103,18 @@ public class BlackBox {
 						alist.add(new Activity(t, hour,
 								"Go to the freaking beach!"));
 				}
+			}
+			
+			for (int t = 50; t < 70; t++) {
+			   for (int hour = 18; hour < 24; hour++) {
+			      alist.add(new Activity(t, hour, "Fremont or Downtown Center Cinema Movie Theaters!"));
+			   }
+			}
+			
+			for (int t = 40; t < 65; t++) {
+			   for (int hour = 0; hour < 6; hour++) {
+			      alist.add(new Activity(t, hour, "Cozy up in front of a fireplace"));
+			   }
 			}
 
 			Collections.sort(alist, new OrderWeight(new OrderWeather(new OrderTime())));
