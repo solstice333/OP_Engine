@@ -23,10 +23,10 @@ public class test {
       Collections.sort(a1, new OrderWeight(new OrderWeather(new OrderTime())));
 
       ListIterator<Activity> liter = a1.listIterator();
-
+      
       int count = 0;
-      while (liter.hasNext() || count != 3) {
-         Activity activity = ((Activity) liter.next());
+      while (liter.hasNext() && count <= 3) {
+         Activity activity = ((Activity)liter.next());
          if (activity.getTime() == actTime
                && activity.getWeather() == actWeather) {
             temp.add(activity);
