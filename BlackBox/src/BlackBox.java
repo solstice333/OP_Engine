@@ -102,6 +102,8 @@ public class BlackBox {
 					if (!actRain)
 						alist.add(new Activity(t, hour,
 								"Go to the freaking beach!"));
+					   alist.add(new Activity(t, hour, "Coldstones"));
+					   alist.add(new Activity(t, hour, "Teaberry fro yo"));
 				}
 			}
 			
@@ -114,6 +116,13 @@ public class BlackBox {
 			for (int t = 40; t < 65; t++) {
 			   for (int hour = 0; hour < 6; hour++) {
 			      alist.add(new Activity(t, hour, "Cozy up in front of a fireplace"));
+			      alist.add(new Activity(t, hour, "Time to sleep"));
+			   }
+			}
+			
+			for(int t = 40; t < 50; t++) {
+			   for(int hour = 0; hour < 6; hour++) {
+			      alist.add(new Activity(t, hour, "Put lots of blankets on"));
 			   }
 			}
 
